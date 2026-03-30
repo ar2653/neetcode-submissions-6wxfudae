@@ -1,0 +1,18 @@
+class Solution {
+    /**
+     * @param {number[]} nums
+     * @param {number} target
+     * @return {number[]}
+     */
+    twoSum(nums, target) {
+        let hm = {};
+        for(let i = 0; i < nums.length; i++) {
+            let diff = target - nums[i];
+            if(nums[i] in hm) {
+                return [hm[nums[i]], i];
+            }
+            hm[diff] = i;
+        }
+        return [-1, -1];
+    }
+}
